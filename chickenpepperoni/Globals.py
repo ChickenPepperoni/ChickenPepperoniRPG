@@ -1,3 +1,4 @@
+import math
 import pygame
 
 # Everything relating to the main window
@@ -15,6 +16,33 @@ MaxEnemyDefense = 1000
 
 # Everything relating to the player
 DisallowedNames = ['shit flavored hot dog man', 'traphouse lord', 'brendan dolan', 'roy adcock']
+
+ExpCurveBase = 4
+ExpCurveMult = 2.0
+
+def createExpCurve(base, mult):
+    baseValue = base
+    valueMultiply = mult
+    level = 1
+    levelMult = level + 1
+    Exp2Level = []
+    while len(Exp2Level) < MaxLevel:
+        expValue = baseValue + level
+        expValue *= levelMult
+        Exp2Level.append(expValue)
+        level += 1
+        levelMult += 1
+        try:
+            levelStr = str(level)
+            if levelStr[1] == '0':
+                baseValue = baseValue * valueMultiply
+                baseValue = math.ceil(baseValue)
+        except:
+            pass
+    return Exp2Level
+
+createExpCurve(ExpCurveBase, ExpCurveMult)
+
 PlayerMovements = {
     pygame.K_LEFT: (-1, 0),
     pygame.K_RIGHT: (1, 0),
