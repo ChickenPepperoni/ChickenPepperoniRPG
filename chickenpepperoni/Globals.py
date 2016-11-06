@@ -14,7 +14,7 @@ MaxEnemyAttack = 2000
 MaxEnemyDefense = 1000
 
 # Everything relating to the player
-DisallowedNames = ['shit flavored hot dog man', 'traphouse lord']
+DisallowedNames = ['shit flavored hot dog man', 'traphouse lord', 'brendan dolan']
 PlayerMovements = {
     pygame.K_LEFT: (-1, 0),
     pygame.K_RIGHT: (1, 0),
