@@ -5,6 +5,12 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, name):
         pygame.sprite.Sprite.__init__(self)
         self.name = name
+        self.hp = Globals.InitialHP
+        self.level = Globals.InitialLevel
+        self.attack = Globals.InitialAttack
+        self.defense = Globals.InitialDefense
+        self.exp = 0
+        self.expNeeded = Globals.ExpCurve[self.level - 1]
         self.pos = [0, 0]
         self.image = self.create_test_shape()
         self.rect = self.image.get_rect()

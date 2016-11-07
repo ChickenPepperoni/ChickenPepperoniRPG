@@ -13,6 +13,11 @@ MaxEnemyAttack = 2000
 MaxEnemyDefense = 1000
 
 # Everything relating to the player
+InitialHP = 20
+InitialLevel = 1
+InitialAttack = 4
+InitialDefense = 2
+
 ExpCurveBase = 4
 ExpCurveMult = 2.0
 
