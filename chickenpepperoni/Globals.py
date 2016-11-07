@@ -41,7 +41,7 @@ def createExpCurve(base, mult):
             pass
     return Exp2Level
 
-createExpCurve(ExpCurveBase, ExpCurveMult)
+ExpCurve = createExpCurve(ExpCurveBase, ExpCurveMult)
 
 PlayerMovements = {
     pygame.K_LEFT: (-1, 0),
