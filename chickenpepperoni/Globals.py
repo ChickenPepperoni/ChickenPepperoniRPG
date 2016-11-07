@@ -8,15 +8,11 @@ MainWindowH = 720
 # Everything related to enemy stats
 MaxLevel = 50
 MaxEnemyLevel = 30
-EnemyLevel = "Level %s"
-EnemyLevelElite = "Level %s Elite"
 MaxEnemyHP = 100000
 MaxEnemyAttack = 2000
 MaxEnemyDefense = 1000
 
 # Everything relating to the player
-DisallowedNames = ['shit flavored hot dog man', 'traphouse lord', 'brendan dolan', 'roy adcock']
-
 ExpCurveBase = 4
 ExpCurveMult = 2.0
 
