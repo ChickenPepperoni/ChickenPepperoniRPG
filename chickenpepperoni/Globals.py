@@ -44,9 +44,32 @@ def createExpCurve(base, mult):
 
 ExpCurve = createExpCurve(ExpCurveBase, ExpCurveMult)
 
+TierBeginner = 0
+TierNovice = 1
+TierIntermediate = 2
+TierExpert = 3
+TierMaster = 4
+
+PlayerTierList = {
+    TierBeginner: (1, 9),
+    TierNovice: (10, 19),
+    TierIntermediate: (20, 29),
+    TierExpert: (30, 39),
+    TierMaster: (40, 50)
+}
+
 PlayerMovements = {
     pygame.K_LEFT: (-1, 0),
     pygame.K_RIGHT: (1, 0),
     pygame.K_UP: (0, -1),
     pygame.K_DOWN: (0, 1)
+}
+
+PlayerStates = {
+    "idle": 0,
+    "walk-left": 1,
+    "walk-right": 2,
+    "walk-down": 3,
+    "walk-up": 4,
+    "frozen": 5
 }
