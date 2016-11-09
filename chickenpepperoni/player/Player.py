@@ -6,7 +6,9 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.name = name
         self.maxHp = Globals.InitialHP
+        self.maxDp = Globals.InitialDP
         self.hp = self.maxHp
+        self.dp = self.maxDp
         self.level = Globals.InitialLevel
         self.tier = Globals.PlayerTierList[Globals.TierBeginner]
         self.attack = Globals.InitialAttack

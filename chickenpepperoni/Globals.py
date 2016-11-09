@@ -14,6 +14,7 @@ MaxEnemyDefense = 1000
 
 # Everything relating to the player
 InitialHP = 20
+InitialDP = 8
 InitialLevel = 1
 InitialAttack = 4
 InitialDefense = 2
