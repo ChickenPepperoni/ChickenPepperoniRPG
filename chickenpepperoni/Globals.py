@@ -74,3 +74,9 @@ PlayerStates = {
     "walk-up": 4,
     "frozen": 5
 }
+
+# Everything related to battles
+Ally = 0
+Enemy = 1
+
+MaxBattleSlots = 4

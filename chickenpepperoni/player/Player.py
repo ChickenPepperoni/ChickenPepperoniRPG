@@ -15,6 +15,7 @@ class Player(pygame.sprite.Sprite):
         self.defense = Globals.InitialDefense
         self.exp = 0
         self.expNeeded = Globals.ExpCurve[self.level - 1]
+        self.money = 0
         self.pos = [0, 0]
         self.image = self.create_test_shape(color=(32, 32, 32))
         self.rect = self.image.get_rect()
