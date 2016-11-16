@@ -16,27 +16,17 @@ class Player(pygame.sprite.Sprite):
         self.exp = 0
         self.expNeeded = Globals.ExpCurve[self.level - 1]
         self.money = 0
-        self.pos = [0, 0]
-        self.image = self.create_test_shape(color=(32, 32, 32))
-        self.rect = self.image.get_rect()
-        self.size = self.rect.size
+        self.rect = pygame.Rect(64, 64, 64, 64)
 
-    def create_test_shape(self, size=(32, 32), color=(255, 255, 255)):
-        surface = pygame.Surface(size)
-        surface.fill(color)
-        surface = surface.convert()
-        return surface
+    def move(self, dx, dy):
+        if dx != 0:
+            self.move_single_axis(dx, 0)
+        if dy != 0:
+            self.move_single_axis(0, dy)
 
-    def update(self):
-        self.rect.topleft = self.pos
-
-    def move_char(self, keys_pressed, rect):
-        pixels = 2
-        for key in keys_pressed.list:
-            self.pos[0] = self.pos[0] + Globals.PlayerMovements[key][0] * pixels
-            self.pos[1] = self.pos[1] + Globals.PlayerMovements[key][1] * pixels
-        self.rect.move(self.pos)
-        self.update()
+    def move_single_axis(self, dx, dy):
+        self.rect.x += dx
+        self.rect.y += dy
 
     def levelUp(self):
         newLevel = self.level + 1

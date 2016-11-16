@@ -5,6 +5,9 @@ import pygame
 MainWindowW = 1280
 MainWindowH = 720
 
+# Everything relating to worlds
+TestWorldBG = (255, 255, 255)
+
 # Everything related to enemy stats
 MaxLevel = 50
 MaxEnemyLevel = 30
@@ -57,13 +60,6 @@ PlayerTierList = {
     TierIntermediate: (20, 29),
     TierExpert: (30, 39),
     TierMaster: (40, 50)
-}
-
-PlayerMovements = {
-    pygame.K_LEFT: (-1, 0),
-    pygame.K_RIGHT: (1, 0),
-    pygame.K_UP: (0, -1),
-    pygame.K_DOWN: (0, 1)
 }
 
 PlayerStates = {

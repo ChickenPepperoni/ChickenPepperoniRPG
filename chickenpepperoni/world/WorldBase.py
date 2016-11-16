@@ -1,13 +1,5 @@
-import pygame
-
 class WorldBase:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.background = None
-
-    def set_background(self, screen, color = (0, 0, 0)):
-        background = pygame.Surface(screen.get_size())
-        background.fill(color)
-        background = background.convert()
-        screen.blit(background, (0, 0))
-        return background
 
