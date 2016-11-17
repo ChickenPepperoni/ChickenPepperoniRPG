@@ -11,6 +11,7 @@ from chickenpepperoni.world.TestWorld import TestWorld
 def mainLoop():
     pygame.mixer.pre_init(44100, -16, 2, 2048)
     pygame.init()
+    pygame.display.set_caption('ChickenPepperoni: RPG')
     music = pygame.mixer.music
     music.load(os.path.join('../resources/bgm/', 'm_grandboss.ogg'))
     music.play(-1)
