@@ -16,17 +16,24 @@ class Player(pygame.sprite.Sprite):
         self.exp = 0
         self.expNeeded = Globals.ExpCurve[self.level - 1]
         self.money = 0
-        self.rect = pygame.Rect(64, 64, 64, 64)
+        self.image = pygame.image.load_extended('../resources/img/pepperoni.png')
+        self.x = 0
+        self.y = 0
 
-    def move(self, dx, dy):
-        if dx != 0:
-            self.move_single_axis(dx, 0)
-        if dy != 0:
-            self.move_single_axis(0, dy)
+    def handle_keys(self):
+        key = pygame.key.get_pressed()
+        dist = Globals.PlayerMovementSpeed
+        if key[pygame.K_DOWN]:
+            self.y += dist
+        elif key[pygame.K_UP]:
+            self.y -= dist
+        if key[pygame.K_RIGHT]:
+            self.x += dist
+        elif key[pygame.K_LEFT]:
+            self.x -= dist
 
-    def move_single_axis(self, dx, dy):
-        self.rect.x += dx
-        self.rect.y += dy
+    def draw(self, surface):
+        surface.blit(self.image, (self.x, self.y))
 
     def levelUp(self):
         newLevel = self.level + 1

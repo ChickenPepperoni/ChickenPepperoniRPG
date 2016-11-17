@@ -71,6 +71,9 @@ PlayerStates = {
     "frozen": 5
 }
 
+PlayerMovementSpeed = 4
+PlayerSprintSpeed = 10
+
 TypeHat = 0
 
 # Everything related to battles
