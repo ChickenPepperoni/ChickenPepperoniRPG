@@ -1,4 +1,4 @@
-from chickenpepperoni.battle import AttackBase
+from chickenpepperoni.battle.AttackBase import AttackBase
 
 class AttackMelee(AttackBase):
     def __init__(self, name, type, damage, acc=100, animation=''):

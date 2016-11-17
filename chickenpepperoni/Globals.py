@@ -71,6 +71,8 @@ PlayerStates = {
     "frozen": 5
 }
 
+TypeHat = 0
+
 # Everything related to battles
 Ally = 0
 Enemy = 1

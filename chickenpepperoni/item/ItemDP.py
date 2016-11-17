@@ -1,4 +1,4 @@
-from chickenpepperoni.item import ItemBase
+from chickenpepperoni.item.ItemBase import ItemBase
 
 class ItemDP(ItemBase):
     def __init__(self, name, desc, lvl, dpGained):
