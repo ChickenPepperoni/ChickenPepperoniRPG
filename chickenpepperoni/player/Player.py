@@ -1,5 +1,7 @@
 import pygame
 from chickenpepperoni import Globals
+from chickenpepperoni.item.ItemHeal import ItemHeal
+from chickenpepperoni.item.ItemDP import ItemDP
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, name):
@@ -34,6 +36,24 @@ class Player(pygame.sprite.Sprite):
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
+
+    def doHeal(self, hp=0, dp=0):
+        if hp:
+            if self.hp + hp <= self.maxHp:
+                self.hp += hp
+        if dp:
+            if self.dp + dp <= self.maxDp:
+                self.dp += dp
+
+    def useItem(self, item):
+        if isinstance(item, ItemHeal):
+            self.doHeal(hp=item.hpGained)
+        if isinstance(item, ItemDP):
+            self.doHeal(dp=item.dpGained)
+
+    def takeDamage(self, dmg):
+        if self.hp - dmg >= 0:
+            self.hp -= dmg
 
     def levelUp(self):
         newLevel = self.level + 1
