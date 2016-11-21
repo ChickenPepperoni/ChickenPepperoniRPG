@@ -81,3 +81,4 @@ Ally = 0
 Enemy = 1
 
 MaxBattleSlots = 4
+BattleTest = True

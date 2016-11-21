@@ -1,10 +1,17 @@
+import os
+import pygame
+
 from chickenpepperoni import Globals
 from chickenpepperoni.player.Player import Player
 
-'''
-i dont know how to fuckign do this
+class Battle:
+    def __init__(self, player, enemies, bgm=('m_eboss.ogg'), bg=(255, 255, 255)):
+        self.player = player
+        self.enemies = enemies
+        self.bgm = bgm
+        self.bg = bg
+        self.expTotal = 0
+        self.moneyTotal = 0
 
-the code before didnt work right
-help
-'''
-            
+    def initBattle(self):
+        self.player.setState('frozen')

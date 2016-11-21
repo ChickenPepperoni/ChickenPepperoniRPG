@@ -18,6 +18,7 @@ class Player(pygame.sprite.Sprite):
         self.exp = 0
         self.expNeeded = Globals.ExpCurve[self.level - 1]
         self.money = 0
+        self.state = Globals.PlayerStates['idle']
         self.image = pygame.image.load_extended('../resources/img/pepperoni.png')
         self.x = 0
         self.y = 0
@@ -26,16 +27,28 @@ class Player(pygame.sprite.Sprite):
         key = pygame.key.get_pressed()
         dist = Globals.PlayerMovementSpeed
         if key[pygame.K_DOWN]:
+            self.setState('walk-down')
             self.y += dist
         elif key[pygame.K_UP]:
+            self.setState('walk-up')
             self.y -= dist
         if key[pygame.K_RIGHT]:
+            self.setState('walk-right')
             self.x += dist
         elif key[pygame.K_LEFT]:
+            self.setState('walk-left')
             self.x -= dist
+        else:
+            self.setState('idle')
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
+
+    def setState(self, state):
+        if state in Globals.PlayerStates:
+            self.state = Globals.PlayerStates[state]
+        else:
+            self.state = Globals.PlayerStates['idle']
 
     def doHeal(self, hp=0, dp=0):
         if hp:
